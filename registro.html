@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <script>
+        exibirRegistros();
+    </script>
+    <header>
+        <button class="open-font-config" id="config-btn">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+        <nav>
+            <a href="index.html">Marcar Faltas</a>
+            <span class="material-symbols-outlined">account_circle</span>
+            <p id="PnameP"></p>
+        </nav>
+    </header>
+    <div class="data-sala-reg">
+        <dialog id="modal" class="modal">
+            <h2>Configurações</h2>
+            <label for="fontSize">Tamanho da Fonte:</label>
+            <input type="range" id="fontSize" min="10" max="30" value="16">
+            <span id="fontSizeValue">16px</span>
+            <button id="applyFontSize">Aplicar</button>
+            <button id="closePopup">Fechar</button>
+        </dialog>
+        <div class="input-container" id="filter-container">
+            <label id="filter-title">Filtro</label>
+            <div class="filter-box">
+                <input type="text" placeholder="Nome" class="inputs" id="buscaNome" name="buscaNome">
+                <button class="btn-search" onclick="exibirRegistrosF(1)">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+            </div>
+            <div class="filter-box">
+                <input type="text" placeholder="Matéria" class="inputs" id="buscaMateria" name="buscaMateria">
+                <button class="btn-search" onclick="exibirRegistrosF(2)">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+            </div>
+            <div class="filter-box">
+                <input type="date" class="inputs" id="buscaData" name="buscaData">
+                <button class="btn-search" onclick="exibirRegistrosF(3)">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+            </div>
+        </div>
+            <div class="tabela-total">
+                <div class="faltas-linha-container" id="cabeca-tabela">
+                    <p class="falta-info" id="head-info">Data</p>
+                    <p class="falta-info" id="head-info">Nome</p>
+                    <p class="falta-info" id="head-info">Turma</p>
+                    <p class="falta-info" id="head-info">Faltas</p>
+                    <p class="falta-info" id="head-info">Matéria</p>
+                    <p class="falta-info" id="head-info">Professor</p>
+                </div>
+                <div class="faltas-container" id="tabela-faltas">
+                    <div class="faltas-linha-container"></div>
+                </div>
+            </div>
+        <!-- <button class="btn-confirm" onclick="exibirRegistros()">Confirmar</button> -->
+    </div>
+    <script>
+        fontMenu();
+    </script>
+</body>
+</html>

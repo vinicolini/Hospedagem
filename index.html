@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <button class="open-font-config" id="config-btn">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+        <nav>
+            <a href="registro.html">Ver registro</a>
+            <span class="material-symbols-outlined">account_circle</span>
+            <p id="PnameP"></p>
+        </nav>
+    </header>
+    <div class="data-sala">
+        <dialog id="modal" class="modal">
+            <h2>Configurações</h2>
+            <label for="fontSize">Tamanho da Fonte:</label>
+            <input type="range" id="fontSize" min="10" max="30" value="16">
+            <span id="fontSizeValue">16px</span>
+            <button id="applyFontSize">Aplicar</button>
+            <button id="closePopup">Fechar</button>
+        </dialog>
+        <h1>Registrar Faltas</h1>
+        <div class="input-container">
+            <input class="data" type="date" id="formData" onchange="logicaData()">
+            <select class="form-select" id="formMat" aria-label="Default select example" onchange="mpData()" >
+                <option selected value="oops">Selecione a Matéria</option>
+                <option value="1">Matemática</option>
+                <option value="2">Historia</option>
+                <option value="3">Português</option>
+                <option value="4">Eduacação Física</option>
+                <option value="5">Ingles</option>            
+            </select>
+            <select class="form-select" id="formTurma" aria-label="Default select example" onchange="verifyExibirAlunos()">
+                <option selected>Selecione a sala</option>
+                <option value="1 Fund">Primeiro ano Fundamental</option>
+                <option value="2 Fund">Segundo ano Fundamental</option>
+                <option value="3 Fund">Terceiro ano Fundamental</option>
+                <option value="4 Fund">Quarto ano Fundamental</option>   
+                <option value="5 Fund">Quinto ano Fundamental</option>         
+            </select>
+        </div>
+    </div>
+    <div class="sala-container">
+        <div class="sala-nomes" id="alunos-list"></div>
+        <button class="btn-confirm" onclick="verifyInserirF()">Confirmar</button>
+    </div>
+    <script>
+        fontMenu();
+    </script>
+</body>
+</html>
